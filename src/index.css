@@ -1,0 +1,389 @@
+:root {
+  --color-bg: #0a0a0a;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-accent: #3b82f6; /* Modern Blue */
+  --color-accent-glow: rgba(59, 130, 246, 0.5);
+  
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 2rem;
+}
+
+p {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+}
+
+/* Glow effects for texts/gradients */
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-accent-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Layout utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* General button styles */
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px 0 var(--color-accent-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 var(--color-accent-glow);
+  background: #2563eb;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--color-surface-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Contact Cards */
+.contact-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN — Mobile First Adjustments
+   ============================================ */
+
+/* --- Tablet & Small Laptop (max-width: 991px) --- */
+@media (max-width: 991px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Hero: stack to single column */
+  #home .container {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 2.5rem !important;
+    padding-top: 2rem;
+  }
+
+  #home .container > div:first-child {
+    align-items: center;
+    order: 2;
+  }
+
+  .hero-video-container {
+    order: 1;
+  }
+
+  /* Limit video size on tablet */
+  .hero-video-container .glass {
+    max-width: 350px !important;
+  }
+
+  /* Contact grid — stack */
+  #contact .container > div:nth-child(2) {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Gallery grid */
+  #portfolio .container > div:last-child {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Carousel arrows inside */
+  #services button[aria-label="Anterior"] {
+    left: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  #services button[aria-label="Siguiente"] {
+    right: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+/* --- Large Phones (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Hero buttons wrap */
+  #home .container div[style*="display: flex"][style*="gap"] {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Video smaller */
+  .hero-video-container .glass {
+    max-width: 280px !important;
+  }
+
+  /* Carousel container */
+  #services .container > div:last-of-type {
+    max-width: 100% !important;
+  }
+
+  /* Contact form padding */
+  #contact form.glass {
+    padding: 1.5rem !important;
+  }
+
+  /* Contact cards */
+  #contact .glass {
+    padding: 1.25rem !important;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1.5rem 0 !important;
+    margin-top: 2rem !important;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+  }
+}
+
+/* --- Medium Phones (max-width: 576px) --- */
+@media (max-width: 576px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-size: 1.1rem !important;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  /* Hero video even smaller */
+  .hero-video-container .glass {
+    max-width: 220px !important;
+    border-radius: 18px !important;
+  }
+
+  /* Gallery — single column */
+  #portfolio .container > div:last-child {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Carousel — smaller dots */
+  #services button[aria-label="Anterior"],
+  #services button[aria-label="Siguiente"] {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  /* Hide gradient overlays on small screens */
+  #services .glass > div[style*="linear-gradient(90deg"] {
+    display: none !important;
+  }
+
+  /* Contact info icon smaller */
+  #contact .glass div[style*="width: 56px"] {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Buttons full width on very small */
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* --- Small Phones (max-width: 400px) --- */
+@media (max-width: 400px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-video-container .glass {
+    max-width: 180px !important;
+  }
+
+  /* Header logo text smaller */
+  header .container a[href="#home"] span {
+    font-size: 1.1rem !important;
+  }
+
+  header .container a[href="#home"] img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary, .btn-secondary {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Bigger tap targets for carousel arrows */
+  #services button[aria-label="Anterior"],
+  #services button[aria-label="Siguiente"] {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  /* Remove hover effects on touch devices */
+  .btn-primary:hover {
+    transform: none;
+  }
+
+  .btn-secondary:hover {
+    background: transparent;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
