@@ -1,6 +1,6 @@
 # TechDynamic — Portfolio Web
 
-> Portafolio profesional de **TechDynamic** (Jhoan Tech). Soluciones digitales a tu medida desde Bucaramanga, Colombia.
+> Portafolio profesional de **TechDynamic** (Jhoan C). Soluciones digitales a tu medida desde Bucaramanga, Colombia.
 
 ---
 
@@ -113,4 +113,4 @@ El proyecto está configurado para un despliegue sin fricciones en Vercel.
 - **Ubicación:** Bucaramanga, Santander — Colombia
 - **Instagram:** [Próximamente]
 
-*Diseño y desarrollo por **TechDynamic · Jhoan Tech***
+*Diseño y desarrollo por **TechDynamic · Jhoan C***
