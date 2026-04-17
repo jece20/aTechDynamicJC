@@ -13,10 +13,12 @@
 ![Vanilla CSS](https://img.shields.io/badge/Vanilla_CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ### Herramientas & Despliegue
+
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 [![TechDynamic CI](https://github.com/jece20/aTechDynamicJC/actions/workflows/ci.yml/badge.svg)](https://github.com/jece20/aTechDynamicJC/actions/workflows/ci.yml)
+
 
 ---
 
