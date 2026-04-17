@@ -192,7 +192,7 @@ export default function Contact() {
               <h4 style={{ margin: "0 0 0.25rem 0", fontSize: "1.25rem" }}>
                 Instagram
               </h4>
-              <p style={{ margin: 0 }}>Sígueme en redes</p>
+              <p style={{ margin: 0 }}>Proximamente...</p>
             </div>
           </a>
         </motion.div>

@@ -1,0 +1,44 @@
+name: Pipeline CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-lint:
+    name: Compilación y Linteo
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el código del repositorio
+      - name: Clonar Repositorio
+        uses: actions/checkout@v4
+
+      # 2. Configurar el entorno de Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Se recomienda usar la última versión LTS
+          cache: 'npm'       # Activa la caché de dependencias para acelerar el proceso
+
+      # 3. Instalar dependencias ('npm ci' es más estricto y rápido que 'npm install')
+      - name: Instalar Dependencias
+        run: npm ci
+
+      # 4. Analizar el código en busca de errores (Linter)
+      - name: Ejecutar Linter
+        run: npm run lint
+
+      # 5. Compilar y empaquetar el proyecto creado con Vite
+      - name: Compilar Aplicación
+        run: npm run build
+
+      # 6. Guardar la carpeta 'dist' final como un artefacto descargable (Ideal para el CD o Despliegue)
+      - name: Subir Artefacto de Compilación
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7

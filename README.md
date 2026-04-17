@@ -19,72 +19,95 @@
 
 ---
 
-## 📁 Estructura del Proyecto (Limpia)
+## 📁 Estructura del Proyecto
 
-aTechDynamicJC-main/
-├── public/                      # Recursos estáticos (Imágenes Webp/Videos)
+```text
+aTechDynamicJC/
+├── public/                      # Recursos estáticos
 │   ├── images/
-│   │   ├── trabajoswebs/        # Imágenes de proyectos recientes
-│   │   └── ...                  # Activos de secciones
-│   ├── videos/
-│   └── favicon.webp
+│   │   ├── trabajoswebs/        # Imágenes optimizadas de proyectos (WebP)
+│   │   └── ...                  # Assets de secciones (servicios, etc.)
+│   ├── videos/                  # Logo en video animado .mp4
+│   └── favicon.webp             # Ícono del sitio
 ├── src/
-│   ├── components/              # Componentes React modulares
-│   │   ├── Background.jsx       # Partículas interactivas
-│   │   ├── Gallery.jsx          # Sección de trabajos recientes
-│   │   └── ...
+│   ├── components/              # Componentes React
+│   │   ├── Background.jsx       # Fondo de partículas interactivo (Canvas)
+│   │   ├── Contact.jsx          # Sección de contacto (Grid 2x2: Correo, Ubicación, WA, IG)
+│   │   ├── Gallery.jsx          # Galería de proyectos con slider tipo carrusel
+│   │   ├── Header.jsx           # Navegación y navbar responsive
+│   │   ├── Hero.jsx             # Sección de inicio principal
+│   │   └── Services.jsx         # Carrusel interactivo de servicios
 │   ├── App.jsx                  # Layout y orquestación
-│   ├── index.css                # Estilos globales y variables
-│   └── main.jsx                 # Punto de entrada
-├── index.html                   # HTML raíz (SEO & Scripts)
-├── package.json                 # Dependencias y scripts
-├── vite.config.js               # Configuración del Bundler
-└── eslint.config.js             # Linter
+│   ├── index.css                # Sistema de diseño, variables y media queries
+│   └── main.jsx                 # Punto de entrada de React
+├── index.html                   # HTML raíz con meta-tags SEO
+├── package.json                 # Dependencias
+├── vite.config.js               # Configuración de Vite
+└── eslint.config.js             # Reglas de Linter
+```
 
 ---
 
-## ✨ Características
+## ✨ Características Principales
 
-- **Estructura Unificada** — Despliegue optimizado para Vercel eliminando subcarpetas innecesarias.
-- **Imágenes WebP** — Optimización de rendimiento para una carga ultrarrápida.
-- **Diseño Premium Oscuro** — Glassmorphism y gradientes elegantes.
-- **Fondo Interactivo** — Partículas animadas con Canvas.
-- **Responsive Design** — Experiencia fluida en móvil, tablet y escritorio.
+- **Diseño Premium Oscuro** — Glassmorphism, bordes sutiles iluminados y tipografía tipográfica elegante.
+- **Interactividad Dinámica** — Carrusel de servicios automático, efectos hover en galería y navbar glass.
+- **Fondo Interactivo** — Partículas animadas con canvas que reaccionan sutilmente.
+- **Responsive Design Completo** — Totalmente optimizado desde móviles pequeños hasta pantallas ultrapanorámicas mediante Media Queries dedicadas.
+- **Formatos Modernos (WebP & MP4)** — Carga súper rápida de imágenes e integraciones de video optimizado.
+- **Despliegue Unificado** — Estructura en la raíz lista para compilar de inmediato en gestores como Vercel o Netlify.
 
 ---
 
 ## 🛠️ Instalación y Uso
 
-### Requisitos
-- **Node.js v20+**
+### Requisitos Previos
+- **Node.js** v20.0 o superior
 
-### Configuración inicial
+### Entorno de Desarrollo Local
+
 ```bash
-# Clonar el repositorio
-git clone [https://github.com/jece20/aTechDynamicJC.git](https://github.com/jece20/aTechDynamicJC.git)
+# 1. Clonar el repositorio
+git clone https://github.com/jece20/aTechDynamicJC.git
 
-# Instalar dependencias
+# 2. Entrar al directorio
+cd aTechDynamicJC
+
+# 3. Instalar las dependencias
 npm install
 
-Desarrollo local
-
+# 4. Iniciar el servidor local
 npm run dev
+```
 
-Disponible en http://localhost:5173
+> **Nota:** La aplicación estará disponible localmente en `http://localhost:5173`.
 
-Despliegue
-Cada git push origin main activa automáticamente una nueva versión en Vercel.
+### Construcción para Producción
 
-📞 Contacto
-WhatsApp: 3115216983
+Para compilar el proyecto y previsualizar la versión final optimizada:
 
-Email: jhoan6370@gmail.com
-
-Ubicación: Bucaramanga, Santander — Colombia
-
-Desarrollado por TechDynamic · Jhoan Tech
+```bash
+npm run build
+npm run preview
+```
 
 ---
 
-### 💡 Recordatorio Final para Vercel:
-Dado que ahora tu `package.json` está en la raíz (como se ve en `image_294870.png`), recuerda entrar a **Settings > General** en Vercel y dejar el campo **"Root Directory"** totalmente vacío. Esto asegurará que tu web cargue siempre a la primera.
+## 🚀 Guía de Despliegue (Vercel)
+
+El proyecto está configurado para un despliegue sin fricciones en Vercel. 
+1. Conecta tu repositorio de GitHub a Vercel.
+2. Al estar el `package.json` en la raíz, asegúrate de que el campo **"Root Directory"** en Vercel esté **totalmente vacío**.
+3. El comando de build (`npm run build`) y de salida (`dist`) se detectan automáticamente. 
+4. Cada `git push origin main` actualizará automáticamente el sitio.
+
+---
+
+## 📞 Contacto
+
+- **WhatsApp:** [+57 311 521 6983](https://wa.me/573115216983)
+- **Email:** jhoan6370@gmail.com
+- **Ubicación:** Bucaramanga, Santander — Colombia
+- **Instagram:** [Próximamente]
+
+*Diseño y desarrollo por **TechDynamic · Jhoan Tech***
